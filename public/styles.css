@@ -1,0 +1,23 @@
+.card-catalogo {
+  width: 18rem;
+  background-color: #222;
+  color: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 10px;
+}
+
+.card-img-top {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card-title {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #000000;
+}

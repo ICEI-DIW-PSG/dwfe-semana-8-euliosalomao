@@ -6,7 +6,8 @@ const catalogo = [
         ano: 2023,
         generos: ["Romance", "Escola", "Comédia"],
         nota: 9.5,
-        assistido: true
+        assistido: true,
+        img: "\\imgs\\Boku-no-Kokoro-no-Yabai-Yatsu.jpg"
     },
     {
         id: 2,
@@ -15,7 +16,8 @@ const catalogo = [
         ano: 2025,
         generos: ["Fantasia", "Aventura", "Magia"],
         nota: 10,
-        assistido: false
+        assistido: false,
+        img: "\\imgs\\witchhatatelier.jpg"
     },
     {
         id: 3,
@@ -24,7 +26,8 @@ const catalogo = [
         ano: 2024,
         generos: ["Aventura", "Fantasia", "Romance"],
         nota: 8.8,
-        assistido: true
+        assistido: true,
+        img: "\\imgs\\spicyandwolf.jpg"
     },
     {
         id: 4,
@@ -33,7 +36,8 @@ const catalogo = [
         ano: 2021,
         generos: ["Romance", "Escola", "Slice of Life"],
         nota: 9.2,
-        assistido: true
+        assistido: true,
+        img: "\\imgs\\horimiya.webp"
     },
     {
         id: 5,
@@ -42,7 +46,8 @@ const catalogo = [
         ano: 2024,
         generos: ["Romance", "Escola"],
         nota: 8,
-        assistido: false
+        assistido: false,
+        img: "\\imgs\\i-made-friends-with-the-second-prettiest-girl-in-my-class-vol-2.jpg"
     },
     {
         id: 6,
@@ -51,20 +56,34 @@ const catalogo = [
         ano: 2016,
         generos: ["Drama", "Romance", "Sobrenatural"],
         nota: 8.9,
-        assistido: true
+        assistido: true,
+        img: "\\imgs\\kiminowa.jpg"
     }
 ];
 
-console.log("Catálogo Completo:", catalogo); // [cite: 5]
+const listaCatalogos = document.querySelector("#lista-catalogos");
 
-console.log("Primeiro item:", catalogo[0].titulo);
+function renderizarLista(lista) {
+  listaCatalogos.innerHTML = "";
 
-console.log("Ano do último item:", catalogo[catalogo.length - 1].ano);
-
-const terceiroItem = catalogo[2];
-if (terceiroItem.generos && terceiroItem.generos.length >= 2) {
-    console.log("Segundo gênero do terceiro item:", terceiroItem.generos[1]);
-} else {
-    console.log("Este item não possui um segundo gênero cadastrado.");
+  lista.forEach((catalogo) => {
+    listaCatalogos.innerHTML += `
+      <div class="card" style="width: 18rem;">
+        <img src="${catalogo.img}" alt="${catalogo.titulo}"class="card-img-top">
+        
+        <div class="card-body">
+          <h5 class="card-title">${catalogo.titulo}</h5>
+          
+          <p class="card-text">
+            Tipo: ${catalogo.tipo} <br>
+            Ano: ${catalogo.ano} <br>
+            Gêneros: ${catalogo.generos} <br>
+            Nota: ${catalogo.nota}
+          </p>
+        </div>
+      </div>
+    `;
+  });
 }
-const outputDiv = document.getElementById('output'); // Seleciona a div que criamos no HTML [cite: 2]
+
+renderizarLista(catalogo);
