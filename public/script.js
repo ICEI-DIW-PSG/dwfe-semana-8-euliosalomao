@@ -7,7 +7,7 @@ const catalogo = [
         generos: ["Romance", "Escola", "Comédia"],
         nota: 9.5,
         assistido: true,
-        img: "\\imgs\\Boku-no-Kokoro-no-Yabai-Yatsu.jpg"
+        img: "./imgs/Boku-no-Kokoro-no-Yabai-Yatsu.jpg"
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ const catalogo = [
         generos: ["Fantasia", "Aventura", "Magia"],
         nota: 10,
         assistido: false,
-        img: "\\imgs\\witchhatatelier.jpg"
+        img: "./imgs/witchhatatelier.jpg"
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ const catalogo = [
         generos: ["Aventura", "Fantasia", "Romance"],
         nota: 8.8,
         assistido: true,
-        img: "\\imgs\\spicyandwolf.jpg"
+        img: "./imgs/spicyandwolf.jpg"
     },
     {
         id: 4,
@@ -37,7 +37,7 @@ const catalogo = [
         generos: ["Romance", "Escola", "Slice of Life"],
         nota: 9.2,
         assistido: true,
-        img: "\\imgs\\horimiya.webp"
+        img: "./imgs/horimiya.webp"
     },
     {
         id: 5,
@@ -46,8 +46,8 @@ const catalogo = [
         ano: 2024,
         generos: ["Romance", "Escola"],
         nota: 8,
-        assistido: false,
-        img: "\\imgs\\i-made-friends-with-the-second-prettiest-girl-in-my-class-vol-2.jpg"
+        assistido: true,
+        img: "./imgs/i-made-friends-with-the-second-prettiest-girl-in-my-class-vol-2.jpg"
     },
     {
         id: 6,
@@ -57,11 +57,45 @@ const catalogo = [
         generos: ["Drama", "Romance", "Sobrenatural"],
         nota: 8.9,
         assistido: true,
-        img: "\\imgs\\kiminowa.jpg"
+        img: "./imgs/kiminowa.jpg"
     }
 ];
 
 const listaCatalogos = document.querySelector("#lista-catalogos");
+let totalfilmes = catalogo.filter(tipos => tipos.tipo === "filme");
+let totalseries = catalogo.filter(tipos => tipos.tipo === "serie");
+let assistidos = catalogo.filter(assistidos => assistidos.assistido === false);
+let soma = 0;
+
+
+catalogo.forEach(item => {
+  soma += item.nota;
+});
+
+const rankingContainer = document.querySelector("#ranking");
+
+function renderizarRanking(lista) {
+  rankingContainer.innerHTML = "";
+
+  const ranking = [...lista].sort((a, b) => b.nota - a.nota);
+
+  ranking.forEach((anime, index) => {
+    rankingContainer.innerHTML += `
+      <div class="card" style="width: 18rem;">
+
+        <div class="card-body">
+          <h5 class="card-title">${index + 1}º - ${anime.titulo}</h5>
+
+          <p class="card-text">
+            Nota: ${anime.nota}
+          </p>
+        </div>
+      </div>
+    `;
+  });
+}
+
+const media = soma / catalogo.length;
 
 function renderizarLista(lista) {
   listaCatalogos.innerHTML = "";
@@ -84,6 +118,15 @@ function renderizarLista(lista) {
       </div>
     `;
   });
+  listaCatalogos.innerHTML += `<h2 class="others"> 
+  Total de Itens: ${catalogo.length} <br> 
+  Total de Filmes: ${totalfilmes.length} <br>
+  Total de Séries: ${totalseries.length} <br>
+  Quantidade de não assistidos: ${assistidos.length}<br>
+  Média geral de notas: ${media.toFixed(2)} <br>
+  </h2>
+  `;
 }
 
 renderizarLista(catalogo);
+renderizarRanking(catalogo);
