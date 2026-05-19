@@ -1,0 +1,507 @@
+:root {
+  --green: #1D9E75;
+  --green-dark: #0F6E56;
+  --green-deep: #04342C;
+  --green-light: #5DCAA5;
+  --green-soft: #E1F5EE;
+
+  --purple: #7F77DD;
+  --amber: #EF9F27;
+  --blue: #378ADD;
+  --danger: #D85A30;
+
+  --bg: #0a0a09;
+  --surface: #111110;
+  --card: #1a1a18;
+  --card-2: #242422;
+  --border: #2e2e2c;
+  --track: #222220;
+  --hover: #1e1e1c;
+
+  --text: #d8d6ce;
+  --text-2: #888780;
+  --text-3: #666662;
+  --muted: #444441;
+
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --radius-sm: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 32px 18px;
+}
+
+.onboarding {
+  width: min(860px, 100%);
+  margin: 0 auto;
+}
+
+.hero-card,
+.step-card,
+.summary-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.hero-card {
+  padding: 28px;
+  margin-bottom: 18px;
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 24px;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(4, 52, 44, 0.95), var(--surface));
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--green-light);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.hero-card h1,
+.summary-card h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.05;
+  margin-bottom: 10px;
+}
+
+.hero-card p,
+.step-header p,
+.summary-card p {
+  color: var(--text-2);
+  line-height: 1.45;
+}
+
+.progress-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--text-2);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.progress-track {
+  height: 10px;
+  background: var(--track);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 20%;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--green);
+}
+
+.step-card {
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.step-header {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+
+.step-number {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--green-deep);
+  color: var(--green-light);
+  border: 1px solid rgba(93, 202, 165, 0.35);
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  flex: 0 0 auto;
+}
+
+.step-header h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.option-btn,
+.segment-btn,
+.small-btn,
+.control-btn,
+.add-option,
+.primary-btn {
+  border: 1px solid var(--border);
+  background: var(--card-2);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: 0.18s ease;
+  position: relative;
+  background-color: transparent;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+}
+.primary-btn::before {
+ content: "";
+ position: absolute;
+ left: 0;
+ top: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgb(83, 118, 90);
+ transform: translateX(-100%);
+ transition: all .3s;
+ z-index: -1;
+}
+
+.primary-btn:hover::before {
+ transform: translateX(0);
+}
+
+.option-btn:hover,
+.segment-btn:hover,
+.small-btn:hover,
+.control-btn:hover,
+.add-option:hover {
+  background: var(--hover);
+  border-color: var(--green-dark);
+}
+
+.option-btn {
+  min-height: 58px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.option-btn.is-selected,
+.segment-btn.is-selected,
+.small-btn.is-selected,
+.control-btn.is-selected {
+  background: rgba(29, 158, 117, 0.18);
+  border-color: var(--green);
+  color: var(--green-soft);
+}
+
+.color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+:root {
+  --green: #1D9E75;
+  --purple: #7F77DD;
+  --amber: #EF9F27;
+  --blue: #378ADD;
+  --yellow: #FACC15;
+  --black: #050505;
+  --white: #E1F5EE;
+  --red: #D85A30;
+  --border: #2e2e2c;
+}
+.color-dot.green { background: var(--green); }
+.color-dot.purple { background: var(--purple); }
+.color-dot.amber { background: var(--amber); }
+.color-dot.blue { background: var(--blue); }
+.color-dot.yellow { background: var(--yellow); }
+.color-dot.black { background: var(--black); }
+.color-dot.white { 
+  background: var(--white); 
+  border: 1px solid var(--border);
+}
+.color-dot.red { background: var(--red); }
+
+
+.add-option {
+  width: 100%;
+  margin-top: 14px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+
+.plus-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: var(--green);
+  color: var(--green-soft);
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  font-weight: 900;
+  flex: 0 0 auto;
+}
+
+.add-option strong,
+.control-btn strong {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.add-option small,
+.control-btn small {
+  color: var(--text-2);
+  line-height: 1.4;
+}
+
+.options-list {
+  display: grid;
+  gap: 12px;
+}
+
+.option-btn.wide {
+  width: 100%;
+  justify-content: flex-start;
+  text-align: left;
+  padding-inline: 18px;
+}
+
+.segmented-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.segment-btn {
+  border: 0;
+  border-right: 1px solid var(--border);
+  border-radius: 0;
+  min-height: 54px;
+  font-weight: 800;
+  color: var(--text-2);
+}
+
+.segment-btn:last-child {
+  border-right: 0;
+}
+
+.segment-btn.is-selected {
+  background: var(--green);
+  color: var(--green-soft);
+}
+
+.goal-card {
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  margin-bottom: 14px;
+}
+
+.goal-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.goal-main strong {
+  font-size: clamp(54px, 9vw, 76px);
+  line-height: 0.9;
+  color: var(--green);
+}
+
+.goal-main span {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.goal-card p {
+  color: var(--text-2);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.quick-days {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.small-btn {
+  min-height: 44px;
+  font-weight: 800;
+  color: var(--text-2);
+}
+
+.control-list {
+  display: grid;
+  gap: 12px;
+}
+
+.control-btn {
+  width: 100%;
+  padding: 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  text-align: left;
+}
+
+.radio-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--text-3);
+  margin-top: 2px;
+  flex: 0 0 auto;
+}
+
+.control-btn.is-selected .radio-dot {
+  border: 6px solid var(--green-light);
+}
+
+.summary-card {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.primary-btn {
+  min-height: 54px;
+  padding: 0 24px;
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--green-soft);
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.primary-btn:hover {
+  background: var(--green-dark);
+}
+
+@media (max-width: 760px) {
+  .page-shell {
+    padding: 14px;
+  }
+
+  .hero-card {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+
+  .progress-area {
+    width: 100%;
+  }
+
+  .step-card,
+  .summary-card {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .step-header h2 {
+    font-size: 20px;
+  }
+
+  .options-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .option-btn {
+    min-height: 54px;
+    font-size: 15px;
+  }
+
+  .segmented-options {
+    grid-template-columns: 1fr;
+  }
+
+  .segment-btn {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .segment-btn:last-child {
+    border-bottom: 0;
+  }
+
+  .quick-days {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summary-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-card h1 {
+    font-size: 27px;
+  }
+
+  .step-header {
+    gap: 10px;
+  }
+
+  .step-number {
+    width: 30px;
+    height: 30px;
+  }
+
+  .goal-main {
+    gap: 16px;
+  }
+
+  .goal-main span {
+    font-size: 17px;
+  }
+}

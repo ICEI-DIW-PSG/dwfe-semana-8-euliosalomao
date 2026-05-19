@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuração do Plano</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="onboarding">
+      <header class="hero-card">
+        <div>
+          <span class="eyebrow">Configuração inicial</span>
+          <h1>Olá, Usuário! Seja bem-vindo!</h1>
+          <p>Responda algumas escolhas rápidas para montar seu plano de controle.</p>
+        </div>
+
+        <div class="progress-area" aria-label="Progresso do onboarding">
+          <span>Etapa 1 de 5</span>
+          <div class="progress-track">
+            <div class="progress-fill"></div>
+          </div>
+        </div>
+      </header>
+
+      <section class="step-card" data-step="vicio">
+        <div class="step-header">
+          <span class="step-number">1</span>
+          <div>
+            <h2>Qual vício quer controlar?</h2>
+            <p>Escolha o hábito principal que você quer acompanhar primeiro.</p>
+          </div>
+        </div>
+
+      <div class="options-grid addiction-grid">
+        <button type="button" class="option-btn is-selected" data-value="tipo-1">
+          <span class="color-dot green"></span>
+          Tipo 1
+        </button>
+
+        <button type="button" class="option-btn" data-value="tipo-2">
+          <span class="color-dot purple"></span>
+          Tipo 2
+        </button>
+
+        <button type="button" class="option-btn" data-value="tipo-3">
+          <span class="color-dot amber"></span>
+          Tipo 3
+        </button>
+
+        <button type="button" class="option-btn" data-value="tipo-4">
+          <span class="color-dot blue"></span>
+          Tipo 4
+        </button>
+
+        <button type="button" class="option-btn" data-value="tipo-5">
+          <span class="color-dot white"></span>
+          Tipo 5
+        </button>
+
+        <button type="button" class="option-btn" data-value="tipo-6">
+          <span class="color-dot black"></span>
+          Tipo 6
+        </button>
+
+        <button type="button" class="option-btn" data-value="tipo-7">
+          <span class="color-dot red"></span>
+          Tipo 7
+        </button>
+
+        <button type="button" class="option-btn" data-value="tipo-8">
+          <span class="color-dot yellow"></span>
+          Tipo 8
+        </button>
+      </div>
+
+        <button type="button" class="add-option" data-action="add-custom-addiction">
+          <span class="plus-icon">+</span>
+          <span>
+            <strong>Adicionar outro vício</strong>
+            <small>Use essa opção caso nenhum tipo acima represente seu hábito.</small>
+          </span>
+        </button>
+      </section>
+
+      <section class="step-card" data-step="frequencia">
+        <div class="step-header">
+          <span class="step-number">2</span>
+          <div>
+            <h2>Com que frequência isso acontece?</h2>
+            <p>Isso ajuda o app a sugerir uma meta mais realista.</p>
+          </div>
+        </div>
+
+        <div class="options-list">
+          <button type="button" class="option-btn wide is-selected" data-value="todos-os-dias">Todos os dias</button>
+          <button type="button" class="option-btn wide" data-value="algumas-vezes-semana">Algumas vezes por semana</button>
+          <button type="button" class="option-btn wide" data-value="momentos-especificos">Só em momentos específicos</button>
+          <button type="button" class="option-btn wide" data-value="raramente">Raramente, mas quero controlar</button>
+        </div>
+      </section>
+
+      <section class="step-card" data-step="meta">
+        <div class="step-header">
+          <span class="step-number">3</span>
+          <div>
+            <h2>Qual meta você quer seguir?</h2>
+            <p>Escolha a lógica principal do seu plano.</p>
+          </div>
+        </div>
+
+        <div class="segmented-options">
+          <button type="button" class="segment-btn is-selected" data-value="abstinencia">Abstinência</button>
+          <button type="button" class="segment-btn" data-value="reducao">Redução</button>
+          <button type="button" class="segment-btn" data-value="limite-diario">Limite diário</button>
+        </div>
+
+        <div class="goal-card">
+          <div class="goal-main">
+            <strong>30</strong>
+            <span>dias<br />consecutivos</span>
+          </div>
+          <p>Objetivo sugerido: ficar 30 dias sem consumir. Depois disso, uma nova meta pode ser criada.</p>
+        </div>
+
+        <div class="quick-days" aria-label="Escolher quantidade de dias">
+          <button type="button" class="small-btn" data-days="7">7 dias</button>
+          <button type="button" class="small-btn" data-days="14">14 dias</button>
+          <button type="button" class="small-btn is-selected" data-days="30">30 dias</button>
+          <button type="button" class="small-btn" data-days="60">60 dias</button>
+        </div>
+      </section>
+
+      <section class="step-card" data-step="controle">
+        <div class="step-header">
+          <span class="step-number">4</span>
+          <div>
+            <h2>Como você quer lidar com isso?</h2>
+            <p>Escolha o modo de controle que combina mais com seu momento.</p>
+          </div>
+        </div>
+
+        <div class="control-list">
+          <button type="button" class="control-btn is-selected" data-value="parar-de-uma-vez">
+            <span class="radio-dot"></span>
+            <span>
+              <strong>Parar de uma vez</strong>
+              <small>Cortar completamente e contar sua sequência diária.</small>
+            </span>
+          </button>
+
+          <button type="button" class="control-btn" data-value="reducao-gradual">
+            <span class="radio-dot"></span>
+            <span>
+              <strong>Redução gradual</strong>
+              <small>Diminuir aos poucos até chegar no controle total.</small>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section class="step-card" data-step="privacidade">
+        <div class="step-header">
+          <span class="step-number">5</span>
+          <div>
+            <h2>O que seus amigos podem ver?</h2>
+            <p>Você pode deixar tudo privado ou mostrar só o necessário.</p>
+          </div>
+        </div>
+
+        <div class="options-list">
+          <button type="button" class="option-btn wide is-selected" data-value="privado">Nada, quero manter privado</button>
+          <button type="button" class="option-btn wide" data-value="sequencia">Apenas minha sequência</button>
+          <button type="button" class="option-btn wide" data-value="progresso">Meu progresso geral</button>
+        </div>
+      </section>
+
+      <footer class="summary-card">
+        <div>
+          <span class="eyebrow">Resumo inicial</span>
+          <h2>Seu plano está quase pronto.</h2>
+        </div>
+        <button type="button" class="primary-btn" data-action="create-plan">Criar meu plano</button>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
